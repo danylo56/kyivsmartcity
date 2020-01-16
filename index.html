@@ -7,19 +7,19 @@
 </head>
 <body>
 	<button class="show" onclick="show1();">Зареєструватися</button>
-	<form class="form" id="logon">
+	<form class="form" id="registrationForm">
 		<h1>Зареєструватися</h1>
-		<input id="name" type="text" placeholder="Name">
-		<input id="text" type="text" placeholder="User name">
+		<input id="fullName" type="text" placeholder="Full name">
+		<input id="login" type="text" placeholder="Login">
 		<input id="password" type="password" placeholder="Password">
-		<input type="submit" value="Log On" onclick="log();">
+		<input type="submit" value="Register" onclick="register(event)">
 	</form>
 	<button class="show" onclick="show2();">Увійти</button>
-	<form class="form" id="login">
+	<form class="form" id="loginForm">
 		<h1>Увійти</h1>
 		<input id="text_2" type="text" placeholder="Login">
 		<input id="password_2" type="password" placeholder="Password">
-		<input type="submit" value="Login" onclick="enter();">
+		<input type="submit" value="Login" onclick="enter(event);">
 	</form>
 	<script type="text/javascript" src="scripts/main.js"></script>
 </body>
