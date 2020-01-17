@@ -21,7 +21,8 @@ function enter(e){
 		console.log(savedUser);
 
 		if(savedUser && savedUser.password == password) {
-			alert('Привіт, ' + savedUser.fullName);
+			// alert('Привіт, ' + savedUser.fullName);
+			showGreeting(savedUser.fullName);
 			return;
 		}
 	}
@@ -29,15 +30,27 @@ function enter(e){
 	alert("Ти хто? Вийди отсюда розбійник.");
 }
 
+function hideAllPopups() {
+	document.getElementById('registrationForm').style.display = 'none';
+	document.getElementById('loginForm').style.display = 'none';
+	document.getElementById('greeting').style.display = 'none';
+}
+
 function show1(){
 	//console.log('Function works')
+	hideAllPopups();
 	document.getElementById('registrationForm').style.display = 'flex';
-	document.getElementById('loginForm').style.display = 'none';
 }
 function show2(){
 	//console.log('Function works')
-	document.getElementById('registrationForm').style.display = 'none';
+	hideAllPopups();
 	document.getElementById('loginForm').style.display = 'flex';
+}
+
+function showGreeting(fullName){
+	hideAllPopups();
+	document.getElementById('loggedUserName').innerText = fullName;
+	document.getElementById('greeting').style.display = 'flex';
 }
 
 function getUserFromRegistrationFields() {
@@ -52,6 +65,7 @@ function register(e) {
 	e.preventDefault(); // Stop for auto-submit
 	const user = getUserFromRegistrationFields();
 	localStorage.setItem(user.login, JSON.stringify(user));
+	hideAllPopups();
 
 	console.log('User registered:', user);
 }
