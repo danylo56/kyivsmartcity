@@ -18,11 +18,7 @@ function enter(){
 	}
 }
 
-function show1(){
+function show(){
 	//console.log('Function works')
-	document.getElementById('logon').setAttribute('style', 'height : 50vh');
-}
-function show2(){
-	//console.log('Function works')
-	document.getElementById('login').setAttribute('style', 'height : 50vh');
+	document.getElementById(this.id).setAttribute('style', 'height : 50vh');
 }
