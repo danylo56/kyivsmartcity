@@ -18,7 +18,7 @@ function enter(){
 	}
 }
 
-function show(){
+function show(elementId){
 	//console.log('Function works')
-	document.getElementById(this.id).setAttribute('style', 'height : 50vh');
+	document.getElementById(elementId).setAttribute('style', 'height : 50vh');
 }
